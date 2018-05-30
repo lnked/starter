@@ -2,12 +2,17 @@
   "name": "markup-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "webpack/tools.js",
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "clean": "rimraf dist",
+    "serve": "webpack-serve --config webpack/tools --env development",
+    "build": "webpack --config webpack/tools --env production",
+    "release": "webpack --config webpack/tools --env release",
+    "start": "yarn run serve",
+    "size": "yarn size-limit"
+  },
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-loader": "7.1.4",
@@ -66,10 +71,10 @@
     "svgo": "1.0.5",
     "svgo-loader": "2.1.0",
     "url-loader": "1.0.1",
+    "webpack": "4.10.1",
+    "webpack-cli": "2.1.4",
+    "webpack-merge": "4.1.2",
     "webpack-serve": "1.0.2",
     "xml-loader": "1.2.1"
-  },
-  "dependencies": {
-    "webpack": "4.9.1"
   }
 }
